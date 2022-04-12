@@ -3,15 +3,13 @@
 }
 
 body {
-    background: ;
+    background: hsl(216, 12%, 8%);
     margin: 0;
     font-family: 'Overpass', sans-serif;
     font-weight: 300;
     line-height: 1.5;
     font-size: 1rem;
     color: hsl(217, 12%, 63%);
-
-
 
 }
 
@@ -30,6 +28,10 @@ h1 {
 
 }
 
+p {
+    margin-bottom: 2em;
+}
+
 
 button {
     display: inline-block;
@@ -41,39 +43,44 @@ button {
 layout
 ================= */
 
-
-
-
 .container {
-    border: none;
-    border-radius: 20px;
-    width: 390px;
-    background-image: linear-gradient(to top,hsl(216, 12%, 8%),hsl(213, 19%, 18%) );
+    width: 100%;
+    max-width: 390px;
+    border-radius: 30px;
+    /* background: hsl(213, 19%, 18%); */
+    background-image: linear-gradient(to top,hsl(216, 12%, 11%), hsl(213, 19%, 18%));
     display: flex;
     flex-direction: column;
-    margin: 100px auto;
-    max-width: 515px;
-    padding: 2em;
+    margin: 90px auto;
+    padding: 1.3em;
+
+}
+
+.rate-desc {
+    /* margin-bottom: 2em; */
+    padding: 10px;
+    padding-bottom: 0;
 
 }
 
 .star-image {
-    background-color: hsl(213, 19%, 18%);
+    max-width: fit-content;
+    background-color: hsl(213, 19%, 24%);
     padding: 10px;
     border-radius: 20px;
     margin-bottom: 0;
 }
 
 .rate {
+    width: 100%;
     margin-bottom: 1em;
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 25px;
     padding: 10px 0;
+    margin-left: 0;
 
 }
-
-
 
 /* =================
 form
@@ -81,6 +88,7 @@ form
 
 .form-btn {
     margin-bottom: 1em;
+
 }
 
 /* =================
@@ -93,26 +101,46 @@ buttons
 }
 
 .btn-rate {
-    /* margin-right: 20px; */
     margin: 0;
     padding: 0;
+    border: none;
     border-radius: 50%;
-    height: 40px;
-    width: 40px;
-    font-weight: 400;
-    background: hsl(213, 19%, 18%);
+    height: 45px;
+    width: 45px;
+    font-weight: 800;
+    background: hsl(213, 19%, 24%);
+    
+    transition: background-color 250ms;
 
 }
 
+.btn-rate:hover {
+    background-color: hsl(217, 12%, 63%);
+    color: hsl(0, 0%, 100%);
+
+}
+
+.btn-rate:focus {
+    background: hsl(25, 97%, 53%);
+    color: hsl(0, 0%, 100%);
+}
 
 .btn-form-primary {
-    padding: 15px 130px;
+    width: 100%;
+    padding: 15px 30px;
     border-radius: 30px;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: hsl(0, 0%, 100%);
     background: hsl(25, 97%, 53%);
+    transition: background-color 250ms;
 
+}
+
+.btn-form-primary:hover,
+.btn-form-primary:focus {
+    color: hsl(25, 97%, 53%);
+    background-color: hsl(0, 0%, 100%);
 }
 
 .attribution {
@@ -122,4 +150,35 @@ buttons
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+/* =================
+    media Query
+=================  */
+
+@media (min-width: 675px) {
+
+    .container {
+
+        max-width: 450px;
+    }
+
+    .rate-desc {
+        border: 1px solid gold;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .rate {
+        justify-content: space-between;
+        gap: 20;
+     
+    }
+
+    .btn-form-primary {
+        padding: 15px 20px;
+         
+        
+    }
+
 }
